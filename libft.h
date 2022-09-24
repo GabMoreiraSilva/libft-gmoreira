@@ -6,15 +6,18 @@
 /*   By: gmoreira <gmoreira@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 22:37:46 by gmoreira          #+#    #+#             */
-/*   Updated: 2022/05/18 16:03:36 by gmoreira         ###   ########.fr       */
+/*   Updated: 2022/09/24 22:46:32 by gmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFFER_SIZE 1
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
+
 
 typedef struct s_list
 {
@@ -51,7 +54,6 @@ char	*ft_strnstr(const char	*big, const char *little,
 			size_t len);
 
 // Additional functions
-char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
@@ -62,6 +64,21 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+// get_next_line
+char	*get_next_line(int fd);
+char	*ft_gnl_strjoin(char *s1, char const *s2);
+
+//printf
+int	ft_printf(const char *str, ...);
+int	ft_int_putchar_fd(char c, int fd);
+int	ft_int_putstr_fd(char *s, int fd);
+int	ft_nbrlen(unsigned long int nbr);
+int	ft_int_putnbr_fd(int nb, int fd);
+int	ft_put_nbrun(unsigned int nbr);
+int	ft_puthex_fd(unsigned long int adress);
+int	ft_puthexlower(unsigned long int adress);
+int	ft_puthexupper(unsigned long int adress);
 
 // Bonus Part
 t_list	*ft_lstlast(t_list *lst);
