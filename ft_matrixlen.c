@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_matrixLen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmoreira <gmoreira@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 04:13:25 by gmoreira          #+#    #+#             */
-/*   Updated: 2022/09/25 21:03:30 by gmoreira         ###   ########.fr       */
+/*   Created: 2022/09/25 16:19:20 by gmoreira          #+#    #+#             */
+/*   Updated: 2022/09/25 21:05:50 by gmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_gnl_strjoin(char *s1, char const *s2)
+int	ft_matrixlen(void **matrix)
 {
-	size_t	index;
-	char	*str;
+	int	counter;
 
-	str = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char) + 1);
-	if (!str)
-		return (NULL);
-	index = 0;
-	while (s1[index])
+	counter = 0;
+	while (matrix[counter] != NULL)
 	{
-		str[index] = s1[index];
-		index++;
+		counter++;
 	}
-	while (*s2)
-	{
-		str[index] = *s2++;
-		index++;
-	}
-	str[index] = '\0';
-	return (str);
+	return (counter);
 }

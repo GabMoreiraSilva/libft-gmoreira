@@ -6,7 +6,7 @@
 /*   By: gmoreira <gmoreira@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 04:13:44 by gmoreira          #+#    #+#             */
-/*   Updated: 2022/09/24 22:45:27 by gmoreira         ###   ########.fr       */
+/*   Updated: 2022/09/25 21:01:09 by gmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,12 @@ char	*get_next_line(int fd)
 	line = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!line)
 		return (NULL);
-	*line = '\0';
+	*line = 0;
 	ans = read_line (fd, line);
+	if (!ans || !*ans)
+		return (NULL);
 	ans = get_n_save (ans, fd);
+	if (!ans || !*ans)
+		return (NULL);
 	return (ans);
 }

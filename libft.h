@@ -6,7 +6,7 @@
 /*   By: gmoreira <gmoreira@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 22:37:46 by gmoreira          #+#    #+#             */
-/*   Updated: 2022/09/24 22:46:32 by gmoreira         ###   ########.fr       */
+/*   Updated: 2022/09/25 23:42:27 by gmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-
 
 typedef struct s_list
 {
@@ -70,15 +69,20 @@ char	*get_next_line(int fd);
 char	*ft_gnl_strjoin(char *s1, char const *s2);
 
 //printf
-int	ft_printf(const char *str, ...);
-int	ft_int_putchar_fd(char c, int fd);
-int	ft_int_putstr_fd(char *s, int fd);
-int	ft_nbrlen(unsigned long int nbr);
-int	ft_int_putnbr_fd(int nb, int fd);
-int	ft_put_nbrun(unsigned int nbr);
-int	ft_puthex_fd(unsigned long int adress);
-int	ft_puthexlower(unsigned long int adress);
-int	ft_puthexupper(unsigned long int adress);
+int		ft_printf(const char *str, ...);
+int		ft_int_putchar_fd(char c, int fd);
+int		ft_int_putstr_fd(char *s, int fd);
+int		ft_nbrlen(unsigned long int nbr);
+int		ft_int_putnbr_fd(int nb, int fd);
+int		ft_put_nbrun(unsigned int nbr);
+int		ft_puthex_fd(unsigned long int adress);
+int		ft_puthexlower(unsigned long int adress);
+int		ft_puthexupper(unsigned long int adress);
+
+//own function
+int		ft_matrixlen(void **matrix);
+void	ft_freeptr(void *ptr);
+void	ft_freearray(void **ptr);
 
 // Bonus Part
 t_list	*ft_lstlast(t_list *lst);

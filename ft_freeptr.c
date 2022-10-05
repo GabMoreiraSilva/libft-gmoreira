@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmoreira <gmoreira@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 04:13:25 by gmoreira          #+#    #+#             */
-/*   Updated: 2022/09/25 21:03:30 by gmoreira         ###   ########.fr       */
+/*   Created: 2022/09/25 21:15:12 by gmoreira          #+#    #+#             */
+/*   Updated: 2022/09/25 22:29:06 by gmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_gnl_strjoin(char *s1, char const *s2)
+void	ft_freeptr(void *ptr)
 {
-	size_t	index;
-	char	*str;
-
-	str = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char) + 1);
-	if (!str)
-		return (NULL);
-	index = 0;
-	while (s1[index])
-	{
-		str[index] = s1[index];
-		index++;
-	}
-	while (*s2)
-	{
-		str[index] = *s2++;
-		index++;
-	}
-	str[index] = '\0';
-	return (str);
+	free(ptr);
+	ptr = NULL;
 }
